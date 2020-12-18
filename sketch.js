@@ -1,3 +1,6 @@
+
+
+
 var song = new Audio("song.mp3");
 var yPos = [];
 var xPos = [];
@@ -6,7 +9,7 @@ var speed = [];
 
 function setup () {
 let canvas = createCanvas(800,600);
-canvas.position(155,35);
+canvas.position(295,80);
 
 
 	for (var j = 0; j < 100; j++){
@@ -14,6 +17,8 @@ canvas.position(155,35);
 		yPos[j] = 0;
 		speed[j] = random(9);
 	}
+
+
 }
 
 
@@ -31,18 +36,6 @@ function draw() {
 			yPos[i] = 0;
 		}
 	}
-
-	// document.getElementById("pagetwo") = function mouseClicked(){
-	// 	if(dist(circleX, circleY, mouseX, mouseY)< diameter/2 && mouseIsPressed){
- //   			fill(50);
- //   			circleX = mouseX;
- //   			circleY = mouseY;
- //   		}
-   
-  
- //     	ellipse(circleX, circleY, diameter,diameter);
-
-	// }
  	
 }
 
