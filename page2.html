@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
+	<head>
+		<meta charset="UTF-8">
 
-	<title>Page 2</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
-	<script language="javascript" type="text/javascript" src="sketch.js"></script>
+		<title>Page 2</title>
 
-	<script type="text/javascript">
-		circleX = 50;
-		circleY = 50;
-		diameter = 600;
-		function setup() { 
-  			let canvas = createCanvas(800,600);
-			canvas.position(295,80);
-		} 
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 
-		function draw() { 
-			background(123,187,242);
-    		fill(255,0,0);
-			noStroke();
+		<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
 
-  
- 			if(dist(circleX, circleY, mouseX, mouseY)< diameter/2 && mouseIsPressed)  {
-   				circleX = mouseX;
-   				circleY = mouseY;
-   			}
-   
-  
-     		ellipse(circleX, circleY, 20,20);
+		<script language="javascript" type="text/javascript" src="sketch.js"></script>
 
-		}
+		<script language="javascript" type="text/javascript" src="libraries/draggable.js"></script>
 
-	</script>
-</head>
+	</head>
 
-<body>
-	<canvas class="myCanvas" id="pagetwo"></canvas>
-	<img src="css/image2.png">
-	<button>
-		<a href="page3.html"> Done </a>
-		</button>
+	<body>
 
-</body>
+		<div id="myCanvas"></div>
+
+		<img src="css/image2.png">
+
+		<button> <a href="page3.html"> Done </a></button>
+
+		<div id="ornaments"></div>
+		
+
+	</body>
 
 </html>

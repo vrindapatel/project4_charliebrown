@@ -1,75 +1,171 @@
 
-
-var lastPage = 
-
-var song = new Audio("song.mp3");
-var yPos = [];
-var xPos = [];
-var speed = [];
-
-
-function setup () {
-let canvas = createCanvas(800,600);
-canvas.position(295,80);
-
-
-	for (var j = 0; j < 100; j++){
-		xPos[j] = random(width);
-		yPos[j] = 0;
-		speed[j] = random(9);
-	}
-
-
-}
-
-
-function draw() {
-
-	background(123,187,242);
-	noStroke();
-
-	for (var i = 0; i < 100; i++){
-		fill(255);
-		ellipse(xPos[i], yPos[i], 5, 5);
-		yPos[i] = yPos[i] + speed[i];
-
-		if (yPos[i]>height){
-			yPos[i] = 0;
-		}
-	}
- 	
-}
+var audio = new Audio("song.mp3");
 
 function xSong(){
- 	song.play();
+	 	audio.play();
+	}
+
+
+
+var myCanvas = function (a) {
+
+	var yPos = [];
+	var xPos = [];
+	var speed = [];
+
+
+	a.setup = function () {
+		let canvas = a.createCanvas(800,600);
+		canvas.position(295,80);
+		canvas.parent("myCanvas");
+
+		for (var j = 0; j < 100; j++){
+			xPos[j] = a.random(a.width);
+			yPos[j] = 0;
+			speed[j] = a.random(10);
+		}
+	}
+
+
+	a.draw = function() {
+
+		a.background(123,187,242);
+		a.noStroke();
+
+		for (var i = 0; i < 100; i++){
+			a.fill(255);
+			a.ellipse(xPos[i], yPos[i], 5, 5);
+			yPos[i] = yPos[i] + speed[i];
+
+			if (yPos[i]>a.height){
+				yPos[i] = 0;
+			}
+		}
+	 	
+	}
+
 }
- 
 
- function setup() { 
+var myCanvasP5 = new p5 (myCanvas);
+var canvas;
 
-				let canvas = createCanvas(800,600);
+var lastPage = function (b){
+	b.setup = function() { 
+
+				canvas = b.createCanvas(800,600);
+				canvas.parent("lastPage");
 				canvas.position(174,50);
-				strokeWeight(4);
-				stroke(51);
-				fill (random (255), random(255), random(255));
-				ellipse (270,500,30,30);
-				ellipse (190,495,30,30);
-				ellipse (240,455,30,30);
-				ellipse (270,655,30,30);
-				ellipse (270,500,30,30);
+				
+				b.strokeWeight(4);
+				b.stroke(51);
+				b.fill (b.random (255), b.random(255), b.random(255));
+				b.ellipse (270,500,30,30);
+				b.ellipse (190,495,30,30);
+				b.ellipse (240,455,30,30);
+				b.ellipse (200,425,30,30);
+				b.ellipse (230,350,30,30);
+				b.ellipse (260,398,30,30);
+				b.ellipse (290,455,30,30);
+
+				b.mouseClicked = function(){
+					b.strokeWeight(4);
+					b.stroke(51);
+					b.fill (b.random (255), b.random(255), b.random(255));
+					b.ellipse (270,500,30,30);
+					b.ellipse (190,495,30,30);
+					b.ellipse (240,455,30,30);
+					b.ellipse (200,425,30,30);
+					b.ellipse (230,350,30,30);
+					b.ellipse (260,398,30,30);
+					b.ellipse (290,455,30,30);
 			} 
 
-			function draw() {
+	b.draw = function() {
 
-				function MouseClicked(){
-					strokeWeight(4);
-					stroke(51);
-					fill (random (255), random(255), random(255));
-					ellipse (270,500,30,30);
-					ellipse (190,495,30,30);
-					ellipse (240,455,30,30);
-					ellipse (270,655,30,30);
-					ellipse (50,50,50,50);
+				
 				}
 					
 			}
+
+}
+
+var myCanvasP5 = new p5 (lastPage);
+var canvas;
+
+let rectangle1;
+let rectangle2;
+let rectangle3;
+let ellipse1;
+let ellipse2;
+let ellipse3;
+
+var ornaments = function(c) {
+
+		c.setup = function() { 
+  			let canvas = c.createCanvas(800,600);
+			canvas.parent("ornaments");
+			canvas.position(295,80);
+
+			c.strokeWeight(4);
+			c.stroke(51);
+			c.fill (c.random (255), c.random(255), c.random(255));
+			rectangle1 = new Draggable(270,500,30,30);
+			rectangle2 = new Draggable(190,495,30,30);
+			rectangle3 = new Draggable(240,455,30,30);
+			ellipse1 = new Draggable(200,425,30,30);
+			ellipse2 = new Draggable(230,350,30,30);
+			ellipse3 = new Draggable(260,398,30,30);
+			
+		} 
+
+		c.draw = function() { 
+			rectangle1.over();
+			rectangle1.update();
+			rectangle1.show();
+
+			rectangle2.over();
+			rectangle2.update();
+			rectangle2.show();
+
+			rectangle3.over();
+			rectangle3.update();
+			rectangle3.show();
+
+			ellipse1.over();
+			ellipse1.update();
+			ellipse1.show();
+
+			ellipse2.over();
+			ellipse2.update();
+			ellipse2.show();
+
+			ellipse3.over();
+			ellipse3.update();
+			ellipse3.show();
+
+		}
+
+		c.mousePressed = function(){
+			rectangle1.pressed();
+			rectangle2.pressed();
+			rectangle3.pressed();
+			ellipse1.pressed();
+			ellipse2.pressed();
+			ellipse3.pressed();
+		}
+
+		c.mouseReleased = function(){
+			rectangle1.released();
+			rectangle2.released();
+			rectangle3.released();
+			ellipse1.released();
+			ellipse2.released();
+			ellipse3.released();
+		}
+
+}
+
+var myCanvasP5 = new p5 (ornaments);
+		
+
+ 

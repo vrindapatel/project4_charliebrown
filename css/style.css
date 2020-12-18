@@ -33,15 +33,21 @@ font-size: 20px;
 	z-index: 3;
 }
 
+#ornaments{
+	display: inline !important;
+	position: absolute;
+	z-index: 3;
+}
+
 img {
 
-	margin:5% 20% 5% 20%;
+	margin:80px 5px 0px 295px;
 	position: absolute;
 	z-index: 1;
 }
 
 
-.myCanvas{
+#myCanvas{
 	position: absolute;
 	z-index: 0;
 }
