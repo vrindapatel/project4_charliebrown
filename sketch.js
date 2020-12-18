@@ -1,8 +1,10 @@
 var song = new Audio("song.mp3");
 
+
 function setup () {
 let canvas = createCanvas(800,600);
-canvas.position(143,35);
+canvas.position(155,35);
+frameRate(1);
 
 }
 
@@ -10,10 +12,13 @@ canvas.position(143,35);
 function draw () {
 
 // background();
-
-
+for (let i = 0; i < 50; i++){
+let r = random(600);
 fill(255);
-ellipse(240, 240, 80, 80);
+noStroke();
+ellipse(i, , 20, 20);
+
+}
 
 
 }
