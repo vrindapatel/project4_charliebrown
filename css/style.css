@@ -26,3 +26,8 @@ img {
 	position: absolute;
 	z-index: 1;
 }
+
+#xmaslights{
+	position: absolute;
+	z-index: 4;
+}
