@@ -5,14 +5,42 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
 	<script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+	<script type="text/javascript">
+		circleX = 50;
+		circleY = 50;
+		diameter = 600;
+		function setup() { 
+  			let canvas = createCanvas(800,600);
+			canvas.position(174,50);
+		} 
+
+		function draw() { 
+			background(123,187,242);
+    		fill(255,0,0);
+			noStroke();
+
+  
+ 			if(dist(circleX, circleY, mouseX, mouseY)< diameter/2 && mouseIsPressed)  {
+   				circleX = mouseX;
+   				circleY = mouseY;
+   			}
+   
+  
+     		ellipse(circleX, circleY, 20,20);
+
+		}
+
+	</script>
 </head>
 
 <body>
-	<canvas id="myCanvas"></canvas>
-	<img src="">
+	<canvas class="myCanvas" id="pagetwo"></canvas>
+	<img src="css/image2.png">
 	<button>
 		<a href="page3.html"> Done </a>
 		</button>
 
 </body>
+
 </html>

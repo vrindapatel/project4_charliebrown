@@ -1,10 +1,10 @@
-#myCanvas {
+.myCanvas {
 	margin:5% 20% 5% 20%;
 	background-color: #7BBBF2;
 	height: 600px;
 	width: 800px;
 	position: absolute;
-	z-index: -1;
+	z-index: -2;
 }
 
 button {
@@ -24,5 +24,5 @@ img {
 
 	margin:5% 20% 5% 20%;
 	position: absolute;
-	z-index: 3;
+	z-index: 1;
 }

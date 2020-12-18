@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Page 3</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
-	<script language="javascript" type="text/javascript" src="libraries/p5.sound.js"></script>
-	<script language="javascript" type="text/javascript" src="sketch.js"></script>
+	<head>
+		<title>Page 3</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+		<script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+		<script language="javascript" type="text/javascript" src="libraries/p5.sound.js"></script>
+		<script language="javascript" type="text/javascript" src="sketch.js"></script>
+		<script type="text/javascript">
+				function setup() { 
+		  			let canvas = createCanvas(800,600);
+					canvas.position(174,50);
+					noStroke();
 
-</head>
+					for (let n = 0; n < 30; n++) {
+						fill (random (255), random(255), random(255));
+						ellipse (100,500,500,500);
+						ellipse (50,50,50,50);
+						ellipse (50,50,50,50);
+						ellipse (50,50,50,50);
+						ellipse (50,50,50,50);
+					}
+				} 
 
-<body>
+				function draw() {
 
-	<canvas id="myCanvas"></canvas>
-	<img src="">
-	<button onclick="xSong()">Light Up</button>
+				}
+		</script>
+	</head>
 
-</body>
+	<body>
+
+		<canvas class="myCanvas" id="lastpage"></canvas>
+		<img src="css/image3.png">
+		<button id="xmas" onclick="xSong()">Light Up</button>
+
+	</body>
 </html>
